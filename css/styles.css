@@ -144,6 +144,12 @@ nav {
     z-index: 2;
 }
 
+@media(max-width: 900px) {
+
+    .index__container {
+        width: 80%;
+    }
+}
 /* about page styles */
 
 #js-scroll {
