@@ -129,6 +129,20 @@ nav {
         bottom: -20px;
     }
 }
+.index__container {
+    width: 50%;
+    margin: 180px 0 100px 100px;
+    padding: 40px;
+    /* border: 1px solid #525252; */
+}
+
+.index__container p {
+    margin: 60px 0;
+    color: #fff;
+    font-size: 46px;
+    font-weight: 400;
+    z-index: 2;
+}
 
 /* about page styles */
 
