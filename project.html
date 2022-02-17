@@ -26,7 +26,7 @@
                 <a href="index.html">Lukewoods.dev</a>
             </div>
             <div class="menu__items">
-                <div class="menu__items-link"><a href="index.html">Projects</a></div>
+                <div class="menu__items-link"><a href="project.html">Projects</a></div>
                 <div class="menu__items-link"><a href="about.html">About</a></div>
             </div>
         </nav>
@@ -61,7 +61,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
-        // smooth scroll 
+        // smooth scroll
         const scroll = new LocomotiveScroll({
             el: document.querySelector('#js-scroll'),
             smooth: true,
@@ -69,7 +69,7 @@
             inertia: 0.75
         });
 
-        // project title animation 
+        // project title animation
         var textWrapper = document.querySelector('.anime-js-title');
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -84,14 +84,14 @@
                 delay: (el, i) => 600 + 30 * i
             });
 
-        // project subtitle animation 
+        // project subtitle animation
         TweenMax.from(".project__container-subtitle", 2, {
             y: 10,
             opacity: 0,
             ease: Expo.easeInOut
         });
 
-        // project image fade 
+        // project image fade
         TweenMax.from(".project__image-one", 2, {
             opacity: 0,
             ease: Expo.easeInOut
