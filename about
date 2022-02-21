@@ -24,11 +24,11 @@
         <!-- menu -->
         <nav class="menu">
             <div class="menu__logo">
-                <a href="index.html">Lukewoods.dev</a>
+                <a href="index">Lukewoods.dev</a>
             </div>
             <div class="menu__items">
-                <div class="menu__items-link"><a href="project.html">Projects</a></div>
-                <div class="menu__items-link active"><a href="about.html">About</a></div>
+                <div class="menu__items-link"><a href="project">Projects</a></div>
+                <div class="menu__items-link active"><a href="about">About</a></div>
             </div>
         </nav>
 
