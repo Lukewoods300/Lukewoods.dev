@@ -4,22 +4,22 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-      <title>Posts &#8211; Posva Dev Blog</title>
+      <title>Projects</title>
       <meta name="description" content="Web, Game dev and UI">
       <!-- Twitter Cards --> 
       <meta name="twitter:card" content="summary">
       <meta name="twitter:image" content="myself.jpg">
-      <meta name="twitter:title" content="Posts">
-      <meta name="twitter:site" content="@posva">
-      <meta name="twitter:creator" content="@posva">
+      <meta name="twitter:title" content="Projects">
+      <meta name="twitter:site" content="@lukewoods300">
+      <meta name="twitter:creator" content="@lukewoods300">
       <!-- Open Graph --> 
       <meta property="og:locale" content="en_US">
       <meta property="og:type" content="article">
-      <meta property="og:title" content="Posts">
-      <meta property="og:url" content="/posts.html">
+      <meta property="og:title" content="Projects">
+      <meta property="og:url" content="/projects.html">
       <meta property="og:site_name" content="Posva Dev Blog">
       <meta property="og:image" content="/images/myself.jpg">
-      <link rel="canonical" href="/posts.html">
+      <link rel="canonical" href="/projects.html">
       <!-- Handheld --> 
       <meta name="HandheldFriendly" content="True">
       <meta name="MobileOptimized" content="320">
@@ -42,14 +42,14 @@
          <div class="block-left">
             <div class="content">
                <a href="/" class="logo" title="Home"> <img src="/images/myself-small.jpg" srcset="/images/myself-small.jpg 1x, /images/myself-small-2x.jpg 2x," alt="Logo" > </a> 
-               <h1 class="section-title">Posts<em>/</em> </h1>
+               <h1 class="section-title">Projects<em>/</em> </h1>
             </div>
          </div>
          <div class="block-right">
             <searchbox @hits="hits = $event" inline-template>
                <div class="searchbox"> <input placeholder="Search..." v-model="query" type="text"> </div>
             </searchbox>
-            <a href="/posts" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">POSTS</span> <a title="Project" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> 
+            <a href="/projects" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">POSTS</span> <a title="Project" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> 
             <div v-if="hits.length > 0" class="content content--dynamic">
                <ul class="posts-list">
                   <li v-for="post in hits" :key="post.objectID">
