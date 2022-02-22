@@ -1,0 +1,414 @@
+<!DOCTYPE html> 
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <title>Posts &#8211; Posva Dev Blog</title>
+      <meta name="description" content="Web, Game dev and UI">
+      <!-- Twitter Cards --> 
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:image" content="myself.jpg">
+      <meta name="twitter:title" content="Posts">
+      <meta name="twitter:site" content="@posva">
+      <meta name="twitter:creator" content="@posva">
+      <!-- Open Graph --> 
+      <meta property="og:locale" content="en_US">
+      <meta property="og:type" content="article">
+      <meta property="og:title" content="Posts">
+      <meta property="og:url" content="/posts.html">
+      <meta property="og:site_name" content="Posva Dev Blog">
+      <meta property="og:image" content="/images/myself.jpg">
+      <link rel="canonical" href="/posts.html">
+      <!-- Handheld --> 
+      <meta name="HandheldFriendly" content="True">
+      <meta name="MobileOptimized" content="320">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Feed --> 
+      <link type="application/atom+xml" rel="alternate" href="https://posva.net/feed.xml" title="Posva Dev Blog" />
+      <!-- Favicons --> 
+      <link rel="shortcut icon" type="image/png" href="/favicon.jpg" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <!-- CSS --> 
+      <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+      <!-- Left Block Image for Posts --> 
+      <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash-gallery-image-3.jpg) no-repeat;background-size: cover;} </style>
+      <!-- Left Block Images for Home and Pages --> 
+      <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash-image-10.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(/images/home.png) no-repeat;background-size: cover;} </style>
+   </head>
+   <body id="posts">
+      <div id="app">
+         <div class="block-left">
+            <div class="content">
+               <a href="/" class="logo" title="Home"> <img src="/images/myself-small.jpg" srcset="/images/myself-small.jpg 1x, /images/myself-small-2x.jpg 2x," alt="Logo" > </a> 
+               <h1 class="section-title">Posts<em>/</em> </h1>
+            </div>
+         </div>
+         <div class="block-right">
+            <searchbox @hits="hits = $event" inline-template>
+               <div class="searchbox"> <input placeholder="Search..." v-model="query" type="text"> </div>
+            </searchbox>
+            <a href="/posts" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">POSTS</span> <a title="Project" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> 
+            <div v-if="hits.length > 0" class="content content--dynamic">
+               <ul class="posts-list">
+                  <li v-for="post in hits" :key="post.objectID">
+                     <h2> <a :href="post.url" class="post-title"> <span v-text="post.title"></span> </a> <span class="date">${ post.date | date }</span> </h2>
+                     <p v-html="filterHtml(post.excerpt)"></p>
+                     <ul class="tags">
+                        <li v-for="tag in post.tags"><a :href="'/tags#' + tag" v-text="tag"></a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <div v-else class="content">
+               <ul class="posts-list">
+                  <li>
+                     <h2> <a href="/shell/git/zs/2016/01/05/git-flow-aliases" class="post-title"> <span>Git Flow aliases </span> </a> <span class="date">05 Jan 2016</span> </h2>
+                     <p>I recently started using git-flow which is an utility that...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#git">git</a></li>
+                        <li><a href="/tags#flow">flow</a></li>
+                        <li><a href="/tags#completion">completion</a></li>
+                        <li><a href="/tags#alias">alias</a></li>
+                        <li><a href="/tags#aliases">aliases</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/js/2015/08/26/using-material-design-lite-with-vuejs" class="post-title"> <span>Using Material Design Lite with Vue.js </span> </a> <span class="date">26 Aug 2015</span> </h2>
+                     <p>When building an application I like to use a nice...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#js">js</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/2015/02/03/using-task-loggersh" class="post-title"> <span>Using task-logger.sh </span> </a> <span class="date">03 Feb 2015</span> </h2>
+                     <p>task-logger.sh </p>
+                     <ul class="tags">
+                        <li><a href="/tags#task">task</a></li>
+                        <li><a href="/tags#logger">logger</a></li>
+                        <li><a href="/tags#sh">sh</a></li>
+                        <li><a href="/tags#task-logger">task-logger</a></li>
+                        <li><a href="/tags#task-logger.sh">task-logger.sh</a></li>
+                        <li><a href="/tags#shell">shell</a></li>
+                        <li><a href="/tags#bash">bash</a></li>
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#dotfiles">dotfiles</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/web/gulp/2014/12/22/optimizing-static-webpages-with-gulp" class="post-title"> <span>Optimizing static webpages with gulp </span> </a> <span class="date">22 Dec 2014</span> </h2>
+                     <p>Recently I decided to create my own online portfolio/CV. Having...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#web">web</a></li>
+                        <li><a href="/tags#gulp">gulp</a></li>
+                        <li><a href="/tags#watch">watch</a></li>
+                        <li><a href="/tags#usemin">usemin</a></li>
+                        <li><a href="/tags#uncss">uncss</a></li>
+                        <li><a href="/tags#imagemin">imagemin</a></li>
+                        <li><a href="/tags#optimization">optimization</a></li>
+                        <li><a href="/tags#connect">connect</a></li>
+                        <li><a href="/tags#server">server</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/web/js/nodejs/tests/2014/09/13/mocha-requirejs-boilerplate" class="post-title"> <span>Mocha + RequireJS boilerplate </span> </a> <span class="date">13 Sep 2014</span> </h2>
+                     <p>Yesterday I had a bit of a bad time trying...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#node">node</a></li>
+                        <li><a href="/tags#nodejs">nodejs</a></li>
+                        <li><a href="/tags#web">web</a></li>
+                        <li><a href="/tags#js">js</a></li>
+                        <li><a href="/tags#testing">testing</a></li>
+                        <li><a href="/tags#mocha">mocha</a></li>
+                        <li><a href="/tags#require">require</a></li>
+                        <li><a href="/tags#requirejs">requirejs</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/university/game/2014/09/09/spacecraft" class="post-title"> <span>Spacecraft </span> </a> <span class="date">09 Sep 2014</span> </h2>
+                     <p>I’m very late as this project ended in June but...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#game">game</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#minecraft">minecraft</a></li>
+                        <li><a href="/tags#spacecraft">spacecraft</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/misc/server/web/rpi/pi/node/2014/07/25/making-your-server-public" class="post-title"> <span>Making your server public </span> </a> <span class="date">25 Jul 2014</span> </h2>
+                     <p>The server </p>
+                     <ul class="tags">
+                        <li><a href="/tags#nodejs">nodejs</a></li>
+                        <li><a href="/tags#web">web</a></li>
+                        <li><a href="/tags#rpi">rpi</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/vim/2014/05/12/random-theme-vim" class="post-title"> <span>Random theme Vim </span> </a> <span class="date">12 May 2014</span> </h2>
+                     <p>Motivation </p>
+                     <ul class="tags">
+                        <li><a href="/tags#vim">vim</a></li>
+                        <li><a href="/tags#themes">themes</a></li>
+                        <li><a href="/tags#tricks">tricks</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/python3/c/cpp/2014/03/03/configurepy" class="post-title"> <span>configure.py </span> </a> <span class="date">03 Mar 2014</span> </h2>
+                     <p>configure.py </p>
+                     <ul class="tags">
+                        <li><a href="/tags#Makefile">Makefile</a></li>
+                        <li><a href="/tags#gnu">gnu</a></li>
+                        <li><a href="/tags#configure">configure</a></li>
+                        <li><a href="/tags#dev">dev</a></li>
+                        <li><a href="/tags#tools">tools</a></li>
+                        <li><a href="/tags#c">c</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#generate">generate</a></li>
+                        <li><a href="/tags#python">python</a></li>
+                        <li><a href="/tags#python3">python3</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/2013/12/22/moving-cursor-in-console" class="post-title"> <span>Moving cursor in console </span> </a> <span class="date">22 Dec 2013</span> </h2>
+                     <p>Cursor While printing text for your tests or any other...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#move">move</a></li>
+                        <li><a href="/tags#cursor">cursor</a></li>
+                        <li><a href="/tags#terminal">terminal</a></li>
+                        <li><a href="/tags#shell">shell</a></li>
+                        <li><a href="/tags#misc">misc</a></li>
+                        <li><a href="/tags#fun">fun</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/retro/bash/2013/12/09/improoving-catimg" class="post-title"> <span>Improoving catimg </span> </a> <span class="date">09 Dec 2013</span> </h2>
+                     <p>Old catimg The old version of catimg was slow, VERY...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#fun">fun</a></li>
+                        <li><a href="/tags#color">color</a></li>
+                        <li><a href="/tags#bash">bash</a></li>
+                        <li><a href="/tags#cat">cat</a></li>
+                        <li><a href="/tags#img">img</a></li>
+                        <li><a href="/tags#catimg">catimg</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/scripting/2013/10/27/elapsed-time-in-shell-scripting" class="post-title"> <span>Elapsed time in shell scripting </span> </a> <span class="date">27 Oct 2013</span> </h2>
+                     <p>Today I was looking at some building tools and they...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#shell">shell</a></li>
+                        <li><a href="/tags#elapsed">elapsed</a></li>
+                        <li><a href="/tags#time">time</a></li>
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#sh">sh</a></li>
+                        <li><a href="/tags#bash">bash</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/git/misc/2013/10/24/my-dotfiles" class="post-title"> <span>My dotfiles </span> </a> <span class="date">24 Oct 2013</span> </h2>
+                     <p>What are the dotfiles </p>
+                     <ul class="tags">
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#dotfiles">dotfiles</a></li>
+                        <li><a href="/tags#bash">bash</a></li>
+                        <li><a href="/tags#custom">custom</a></li>
+                        <li><a href="/tags#gitconfig">gitconfig</a></li>
+                        <li><a href="/tags#git">git</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/php/2013/10/10/super-simple-and-fast-php-55-installation-on-osx" class="post-title"> <span>Super simple and fast PHP 5.5 installation on OSX </span> </a> <span class="date">10 Oct 2013</span> </h2>
+                     <p>I’m starting to get more interested into web technologies and...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#php">php</a></li>
+                        <li><a href="/tags#misc">misc</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/c/cpp/2013/08/18/configure-script" class="post-title"> <span>Configure Script </span> </a> <span class="date">18 Aug 2013</span> </h2>
+                     <p>Configure script </p>
+                     <ul class="tags">
+                        <li><a href="/tags#Makefile">Makefile</a></li>
+                        <li><a href="/tags#gnu">gnu</a></li>
+                        <li><a href="/tags#configure">configure</a></li>
+                        <li><a href="/tags#dev">dev</a></li>
+                        <li><a href="/tags#tools">tools</a></li>
+                        <li><a href="/tags#c">c</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#generate">generate</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/blog/jekyll/2013/07/26/custom-icons-for-pages" class="post-title"> <span>Custom icons for pages </span> </a> <span class="date">26 Jul 2013</span> </h2>
+                     <p>Icons are beautiful I personnay like when things show off...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#blog">blog</a></li>
+                        <li><a href="/tags#help">help</a></li>
+                        <li><a href="/tags#jekyll">jekyll</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/misc/blog/2013/07/11/new-url-posvanet" class="post-title"> <span>New URL: posva.net </span> </a> <span class="date">11 Jul 2013</span> </h2>
+                     <p>For some reason I wanted to have my own URL,...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#misc">misc</a></li>
+                        <li><a href="/tags#blog">blog</a></li>
+                        <li><a href="/tags#url">url</a></li>
+                        <li><a href="/tags#namecheap">namecheap</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/games/kdd/cpp/2013/07/07/using-xml-for-kill-da-ducks" class="post-title"> <span>Using xml for Kill da Ducks </span> </a> <span class="date">07 Jul 2013</span> </h2>
+                     <p>Kill da Ducks Today I had some fun adding a...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#game">game</a></li>
+                        <li><a href="/tags#kdd">kdd</a></li>
+                        <li><a href="/tags#kill">kill</a></li>
+                        <li><a href="/tags#da">da</a></li>
+                        <li><a href="/tags#ducks">ducks</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/grav/games/cpp/2013/06/21/grav-last-release" class="post-title"> <span>Grav, last release </span> </a> <span class="date">21 Jun 2013</span> </h2>
+                     <p>Grav I already talked about that project, well here I’m...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#gravitron">gravitron</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/cpp/games/grav/2013/06/18/gravagain" class="post-title"> <span>Grav…Again! </span> </a> <span class="date">18 Jun 2013</span> </h2>
+                     <p>VVVVVV As you surely know VVVVVV is a well known...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#game">game</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                        <li><a href="/tags#gravitron">gravitron</a></li>
+                        <li><a href="/tags#grav">grav</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/git/misc/2013/06/09/svn-to-git" class="post-title"> <span>Svn to git </span> </a> <span class="date">09 Jun 2013</span> </h2>
+                     <p>svn… WHY?! Sometimes you find svn repositories, yes it happens…...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#git">git</a></li>
+                        <li><a href="/tags#svn">svn</a></li>
+                        <li><a href="/tags#misc">misc</a></li>
+                        <li><a href="/tags#migration">migration</a></li>
+                        <li><a href="/tags#how to">how to</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/c/games/retro/2013/06/08/tetris" class="post-title"> <span>Tetris </span> </a> <span class="date">08 Jun 2013</span> </h2>
+                     <p>Tetris? Never heard of it… I developped some time ago...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#c">c</a></li>
+                        <li><a href="/tags#game">game</a></li>
+                        <li><a href="/tags#tetris">tetris</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/out-topic/retro/2013/05/28/invented-ad" class="post-title"> <span>Invented Ad </span> </a> <span class="date">28 May 2013</span> </h2>
+                     <p>Hey, today I have something that have nothing to deal...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#old school">old school</a></li>
+                        <li><a href="/tags#poster">poster</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/shell/retro/bash/2013/05/27/catimg" class="post-title"> <span>Catimg </span> </a> <span class="date">27 May 2013</span> </h2>
+                     <p>How and… WHY?! If you know the shell I’m sure...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#zsh">zsh</a></li>
+                        <li><a href="/tags#fun">fun</a></li>
+                        <li><a href="/tags#color">color</a></li>
+                        <li><a href="/tags#bash">bash</a></li>
+                        <li><a href="/tags#cat">cat</a></li>
+                        <li><a href="/tags#img">img</a></li>
+                        <li><a href="/tags#catimg">catimg</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/c/games/unniversity/2012/06/09/jump-nrun" class="post-title"> <span>Jump n’Run </span> </a> <span class="date">09 Jun 2012</span> </h2>
+                     <p>I really had no time to work on Kill da...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#opengl">opengl</a></li>
+                        <li><a href="/tags#c">c</a></li>
+                        <li><a href="/tags#game">game</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/grav/cpp/games/2011/11/07/grav-alpha-download" class="post-title"> <span>Grav alpha download </span> </a> <span class="date">07 Nov 2011</span> </h2>
+                     <p>As I said, here it is, an alpha release, still...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/grav/cpp/games/2011/11/06/grav-alpha-release-tomorrow" class="post-title"> <span>Grav alpha release tomorrow </span> </a> <span class="date">06 Nov 2011</span> </h2>
+                     <p>Grav is going very well even if I had not...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/grav/cpp/games/2011/10/29/grav-has-now-a-menu" class="post-title"> <span>Grav has now a menu </span> </a> <span class="date">29 Oct 2011</span> </h2>
+                     <p>Yep! And it’s fully working! The menu consists on 4...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/grav/cpp/games/2011/10/21/some-progress-in-grav" class="post-title"> <span>Some progress in Grav </span> </a> <span class="date">21 Oct 2011</span> </h2>
+                     <p>Hi! I have been coding a bit the game, but...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                        <li><a href="/tags#gravitron">gravitron</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h2> <a href="/2011/10/16/whats-up" class="post-title"> <span>What’s up?! </span> </a> <span class="date">16 Oct 2011</span> </h2>
+                     <p>So, I have been a little absent for a while,...</p>
+                     <ul class="tags">
+                        <li><a href="/tags#grav">grav</a></li>
+                        <li><a href="/tags#cpp">cpp</a></li>
+                        <li><a href="/tags#games">games</a></li>
+                        <li><a href="/tags#vvvvvv">vvvvvv</a></li>
+                        <li><a href="/tags#gravitron">gravitron</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="overlay">
+         <ul class="projects-menu">
+            <li style="background:url(http://taylantatli.me/Halve/images/halve-home-image.png) center center no-repeat;"> <a href="http://taylantatli.me/Halve" class="inactive" target="_blank" rel="nofollow external"> <span> Halve Jekyll Theme <br><em>in progress</em> </span> </a> </li>
+            <li style="background:url(https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png) center center no-repeat;"> <a href="http://taylantatli.me/Moon" target="_blank" rel="nofollow external"> <span> Moon Jekyll Theme </span> </a> </li>
+            <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png) center center no-repeat;"> <a href="http://taylantatli.me/Ramme" target="_blank" rel="nofollow external"> <span> Ramme Jekyll Theme </span> </a> </li>
+            <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png) center center no-repeat;"> <a href="http://taylantatli.me/Daisy-Pelican-Theme/" target="_blank" rel="nofollow external"> <span> Daisy Pelican Theme </span> </a> </li>
+            <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png) center center no-repeat;"> <a href="https://github.com/TaylanTatli/Block-Icon-Theme" class="inactive" target="_blank" rel="nofollow external"> <span> Block Icon Theme <br><em>in progress</em> </span> </a> </li>
+            <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png) center center no-repeat;"> <a href="http://taylantatli.me/StartPage/" class="inactive" target="_blank" rel="nofollow external"> <span> Start Page <br><em>in progress</em> </span> </a> </li>
+         </ul>
+      </div>
+      <script src="/assets/js/main.min.js"></script> <!-- Asynchronous Google Analytics snippet --> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-41234870-1', 'auto'); ga('require', 'linkid', 'linkid.js'); ga('send', 'pageview'); </script> 
+   </body>
+</html>
