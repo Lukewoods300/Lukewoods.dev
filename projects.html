@@ -49,7 +49,7 @@
             <searchbox @hits="hits = $event" inline-template>
                <div class="searchbox"> <input placeholder="Search..." v-model="query" type="text"> </div>
             </searchbox>
-            <a href="/projects" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">POSTS</span> <a title="Project" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> 
+            <a href="/projects" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">Projects</span> 
             <div v-if="hits.length > 0" class="content content--dynamic">
                <ul class="posts-list">
                   <li v-for="post in hits" :key="post.objectID">
