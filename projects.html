@@ -32,7 +32,7 @@
       <!-- CSS --> 
       <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
       <!-- Left Block Image for Posts --> 
-      <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash-image-10.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(/images/home.png) no-repeat;background-size: cover;} </style>} </style>
+      <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash-gallery-image-3.jpg) no-repeat;background-size: cover;} </style>
       <!-- Left Block Images for Home and Pages --> 
       <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash-image-10.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(/images/home.png) no-repeat;background-size: cover;} </style>
       <link rel="icon" href="/images//LWicon.png">
@@ -49,7 +49,7 @@
             <searchbox @hits="hits = $event" inline-template>
                <div class="searchbox"> <input placeholder="Search..." v-model="query" type="text"> </div>
             </searchbox>
-            <a href="/projects" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">Projects</span> 
+            <a href="/projects" title="Posts" class="posts-menu-icon"> </a> <span class="posts-link">Projects</span> < 
             <div v-if="hits.length > 0" class="content content--dynamic">
                <ul class="posts-list">
                   <li v-for="post in hits" :key="post.objectID">
