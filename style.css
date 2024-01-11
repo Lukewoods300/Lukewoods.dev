@@ -1,0 +1,78 @@
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-image: url('background-image.png'); /* Animated background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Light text for dark background */
+    transition: background-color 0.3s;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.profile {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.about, .projects, .skills, .contact {
+    flex: 2;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.about:hover, .projects:hover, .skills:hover, .contact:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design for Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
