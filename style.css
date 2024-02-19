@@ -1,51 +1,45 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
-/* Base styles */
 :root {
     --accent-color: #4CAF50; /* Green accent color */
     --text-color: #fff;
-    --background-dark: rgba(0, 0, 0, 0.7);
-    --background-darker: rgba(0, 0, 0, 0.8);
+    --background-dark: rgba(0, 0, 0, 0.5); /* Made more transparent for content to blend with the background */
+    --background-darker: rgba(0, 0, 0, 0.6);
 }
 
-body {
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-image: url('background-image.png');
+    background: url('path-to-your-gif.gif') no-repeat center center fixed; 
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--text-color);
-    transition: background-color 0.3s;
 }
 
 .container {
+    position: absolute;
+    top: 10%; /* Adjust based on your preference */
+    right: 10%; /* Adjust based on your preference */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-end; /* Align content to the right */
+    max-width: 300px; /* Adjust based on your content size */
 }
 
-.profile {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
+.profile, .about, .projects, .skills, .contact {
+    background-color: var(--background-dark);
+    padding: 10px; /* Reduced padding */
+    margin: 10px 0; /* Adjust spacing between elements */
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    margin: 0 auto;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.profile-picture:hover {
-    transform: scale(1.1);
+    width: 80px; /* Reduced size */
+    height: 80px;
 }
 
 .profile-picture img {
@@ -53,49 +47,17 @@ body {
     height: auto;
 }
 
-.name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: var(--accent-color); /* Accent color for name */
+.name, .title, h2, p, a {
+    font-size: 0.8rem; /* Adjust font size for all text elements */
 }
 
-.title {
-    font-size: 18px;
-    color: #ccc;
-}
-
-.about, .projects, .skills, .contact {
-    flex: 2;
-    min-width: 300px;
-    background-color: var(--background-dark);
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
-
-.about:hover, .projects:hover, .skills:hover, .contact:hover {
-    background-color: var(--background-darker);
-}
-
-/* Responsive Design for Large Screens */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        margin: auto;
-    }
-}
-
-/* Responsive Design for Smaller Screens */
+/* Further responsive adjustments as needed */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile, .about, .projects, .skills, .contact {
-        min-width: auto;
-        max-width: 90%;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
     }
 }
