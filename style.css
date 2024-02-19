@@ -13,7 +13,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: url('neon.gif') no-repeat center center fixed; 
+    background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDN4eGlpMjB4emdjaXYyZ25mcnVvcjljYTJqMTg1YnlwbDJjaGsyZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOEbLRT4SwD35IELiQ/giphy.gif') no-repeat center center fixed; 
     background-size: cover;
     color: var(--text-color);
 }
