@@ -1,5 +1,5 @@
-Luke Woods - Java & Android Developer Portfolio
-Welcome to the repository for Luke Woods's professional portfolio website. This site showcases my skills, projects, and professional background as a Java & Android Developer. It's designed to be visually appealing and to highlight my development work and contributions.
+Luke Woods - DevOps & IT Specialist Portfolio
+Welcome to the repository for Luke Woods's professional portfolio website. This site showcases my skills, projects, and professional background. It's designed to be visually appealing and to highlight my development work and contributions.
 
 Features
 Home Page: Introduces visitors to my professional persona with a striking profile picture and a brief introduction.
@@ -17,11 +17,11 @@ To set up this project locally, follow these steps:
 Clone the repository
 bash
 Copy code
-git clone https://github.com/yourgithubusername/luke-woods-portfolio.git
+git clone https://github.com/lukewoods300/lukewoods300.github.io
 Navigate to the project directory
 bash
 Copy code
-cd luke-woods-portfolio
+cd lukewoods300.github.io
 Open the index.html file in your browser
 You can do this by simply double-clicking the file in most operating systems, or by opening it through a web browser's Open File option.
 
