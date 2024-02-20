@@ -16,16 +16,21 @@ body, html {
     background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDN4eGlpMjB4emdjaXYyZ25mcnVvcjljYTJqMTg1YnlwbDJjaGsyZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOEbLRT4SwD35IELiQ/giphy.gif') no-repeat center center fixed; 
     background-size: cover;
     color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
 }
 
-.container {
+.profile-container {
     position: absolute;
-    top: 10px; /* Adjusted for top-left positioning */
-    left: 10px; /* Adjusted for top-left positioning */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
-    max-width: 300px;
+    top: 10px;
+    left: 10px;
+}
+
+.content-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 50%;
 }
 
 .profile, .about, .projects, .skills, .contact {
@@ -33,7 +38,7 @@ body, html {
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
 }
 
@@ -62,11 +67,11 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .container {
-        top: auto;
-        left: auto;
-        bottom: 0;
-        right: 0;
+    body, html {
+        flex-direction: column;
+    }
+    .profile-container, .content-container {
+        position: static;
         max-width: 100%;
     }
 }
