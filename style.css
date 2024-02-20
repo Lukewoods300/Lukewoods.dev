@@ -4,8 +4,8 @@
 :root {
     --accent-color: #4CAF50; /* Green accent color */
     --text-color: #fff;
-    --background-dark: rgba(0, 0, 0, 0.5); /* Made more transparent for content to blend with the background */
-    --background-darker: rgba(0, 0, 0, 0.6);
+    --background-dark: rgba(0, 0, 0, 0.7); /* Adjusted for content readability */
+    --background-darker: rgba(0, 0, 0, 0.8);
 }
 
 body, html {
@@ -20,26 +20,31 @@ body, html {
 
 .container {
     position: absolute;
-    top: 10%; /* Adjust based on your preference */
-    right: 10%; /* Adjust based on your preference */
+    top: 10px; /* Adjusted for top-left positioning */
+    left: 10px; /* Adjusted for top-left positioning */
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: flex-end; /* Align content to the right */
-    max-width: 300px; /* Adjust based on your content size */
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    max-width: 300px;
 }
 
 .profile, .about, .projects, .skills, .contact {
     background-color: var(--background-dark);
-    padding: 10px; /* Reduced padding */
-    margin: 10px 0; /* Adjust spacing between elements */
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 10px;
     width: 100%;
     box-sizing: border-box;
 }
 
 .profile-picture {
-    width: 80px; /* Reduced size */
+    width: 80px;
     height: 80px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
 .profile-picture img {
@@ -48,16 +53,20 @@ body, html {
 }
 
 .name, .title, h2, p, a {
-    font-size: 0.8rem; /* Adjust font size for all text elements */
+    font-size: 0.8rem;
 }
 
-/* Further responsive adjustments as needed */
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .container {
         top: auto;
-        right: auto;
+        left: auto;
         bottom: 0;
-        left: 0;
+        right: 0;
         max-width: 100%;
     }
 }
