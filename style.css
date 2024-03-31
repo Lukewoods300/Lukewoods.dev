@@ -45,7 +45,8 @@ section {
   width: 90%; /* Or the desired percentage */
   max-width: 100%; 
   min-width: 600px; /* Optional: Set a minimum width */
-  margin: 0 auto;  /* Center the section */
+  box-sizing: border-box;  /* Center the section */
+  margin: 30px;
 }
 
 .profile {
