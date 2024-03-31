@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  
 </head>
 <body>
   <header>
@@ -16,10 +15,11 @@
       <div class="profile-picture">
         <img src="profile-picture.png" alt="Luke Woods">
       </div>
-      <div class="name">LUKE WOODS</div>
+      <div class="name dynamic-text">LUKE WOODS</div>
       <div class="title">DevOps & IT Specialist</div>
     </div>
-    <nav> <a href="#about">About Me</a>
+    <nav>
+       <a href="#about">About Me</a>
        <a href="#projects">Projects</a>
        <a href="#skills">Skills</a> 
        <a href="#blog">Blog</a> 
@@ -28,37 +28,38 @@
     </nav>
   </header>
   <main>
-    <section class="about">
+    <section id="about" class="about">
       <h2>About Me</h2>
-      <p>Experienced IT professional specializing in DevOps, cloud computing (AWS, Azure), and programming with a strong foundation in Python, Java, and technical support. Proven track record in enhancing data reliability and operational efficiency within the healthcare sector. Passionate about leveraging technical expertise and an innovative approach in a challenging IT role.</p>
+      <p> I specialize in DevOps, cloud infrastructure, and software development, focusing on automation, scalability, and efficient operations. My journey has taken me through various industries, imparting a broad perspective and the ability to adapt and innovate. My aim is to drive progress through technology, optimizing systems and processes to achieve excellence and sustainability.</p>
     </section>
-    <section class="projects">
+    <section id="projects" class="projects">
       <h2>Projects</h2>
-      <p>Implemented HL7 interfaces for seamless healthcare data integration, developed scripts for automated data transformation, and led the optimization of PACS deployment on cloud platforms like AWS and Azure.</p>
+      <div class="projects-container"></div>
     </section>
-    <section class="skills">
+    <section id="skills" class="skills">
       <h2>Skills</h2>
-      <ul>
-        <li>Programming Languages: Python, Java</li>
-        <li>Scripting: PowerShell, Bash, Windows Scripting</li>
-        <li>Database Management: SQL, Microsoft SQL Server</li>
-        <li>Cloud Platforms: AWS, Azure</li>
-        <li>DevOps Tools & Practices: HL7 Interfaces, SOC2 Compliance, HIPAA Compliance</li>
-        <li>Systems & Network Administration: Windows, MacOS, Linux, VPNs, Proxies, Firewalls</li>
-      </ul>
+      <div class="skills-container"></div>
     </section>
-    <section class="contact">
+    <section id="blog" class="blog">
+      <h2>Blog</h2>
+      <!-- Blog posts will be dynamically added here -->
+    </section>
+    <section id="journal" class="journal">
+      <h2>Journal</h2>
+      <!-- Journal entries will be dynamically added here -->
+    </section>
+    <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:lukewoods29@gmail.com">lukewoods29@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/lukewoods300" target="_blank">linkedin.com/in/lukewoods300</a></p>
-      <p>GitHub: <a href="https://github.com/Lukewoods300" target="_blank">github.com/Lukewoods300</a></p>
-      <p>Website: <a href="https://lukewoods.dev" target="_blank">lukewoods.dev</a></p>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <!-- Social links will be added here -->
+      </div>
     </section>
-    <section class="blog" id="blog">  <h2>Blog</h2>
-   </section>
-   <section class="journal" id="journal">
-   <h2>Journal</h2>
-   </section>
   </main>
   <script src="main.js"></script>
 </body>
