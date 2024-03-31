@@ -95,6 +95,7 @@ a:hover {
   body, html {
     flex-direction: column;
   }
+}
 /* Image Carousel */
 .projects-container {
   display: flex;
@@ -142,4 +143,3 @@ a:hover {
   background-color: var(--primary-color);
   border-radius: 10px;
 }  
-}
