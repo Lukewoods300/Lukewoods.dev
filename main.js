@@ -107,3 +107,37 @@ skills.forEach(skill => {
 });
 
 skillsSection.appendChild(skillsContainer);
+
+// Add this to your existing main.js file
+const blogPosts = document.querySelectorAll('.blog-post');
+const journalEntries = document.querySelectorAll('.journal-entry');
+
+function setMaxHeight(elements, maxHeight) {
+    elements.forEach(element => {
+        element.style.maxHeight = maxHeight;
+        element.style.overflow = "hidden";
+    });
+}
+
+function addReadMoreButton(elements, label) {
+    elements.forEach(element => {
+        const button = document.createElement('button');
+        button.textContent = label;
+        button.addEventListener('click', () => {
+        if (element.style.maxHeight) {
+             element.style.maxHeight = null; // Show full text
+             button.textContent = "Read Less";
+        } else {
+             element.style.maxHeight = "100px"; // Example initial height
+             button.textContent = "Read More";
+        }
+        });
+        element.appendChild(button);
+    });
+}
+
+// Initial setup
+setMaxHeight(blogPosts, "100px"); 
+addReadMoreButton(blogPosts, "Read More");
+setMaxHeight(journalEntries, "100px"); 
+addReadMoreButton(journalEntries, "Read More");
