@@ -27,14 +27,21 @@ header {
 }
 
 main {
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 
-.profile, section {
+section {
+  background-color: var(--background-dark);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.profile {
   background-color: var(--background-dark);
   padding: 20px;
   margin: 10px 0;
