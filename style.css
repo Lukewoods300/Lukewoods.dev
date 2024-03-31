@@ -1,77 +1,98 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
-    --accent-color: #4CAF50; /* Green accent color */
-    --text-color: #fff;
-    --background-dark: rgba(0, 0, 0, 0.7); /* Adjusted for content readability */
-    --background-darker: rgba(0, 0, 0, 0.8);
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --text-color: #fff;
+  --background-dark: rgba(0, 0, 0, 0.7);
+  --background-darker: rgba(0, 0, 0, 0.8);
 }
 
 body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: url('https://raw.githubusercontent.com/Lukewoods300/lukewoods300.github.io/master/Background.jpeg') no-repeat center center fixed; 
-    background-size: cover;
-    color: var(--text-color);
-    display: flex;
-    justify-content: space-between;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://raw.githubusercontent.com/Lukewoods300/lukewoods300.github.io/master/Background.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
-.profile-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+header {
+  background-color: var(--background-darker);
+  padding: 20px;
+  text-align: center;
 }
 
-.content-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    max-width: 50%;
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.profile, .about, .projects, .skills, .contact {
-    background-color: var(--background-dark);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 10px;
-    width: auto;
-    box-sizing: border-box;
+.profile, section {
+  background-color: var(--background-dark);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  max-width: 800px;
+  box-sizing: border-box;
+  transition: transform 0.3s;
+}
+
+.profile:hover, section:hover {
+  transform: translateY(-5px);
 }
 
 .profile-picture {
-    width: 80px;
-    height: 80px;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin: 0 auto;
-    overflow: hidden;
-    transition: transform 0.3s;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
 .profile-picture img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-.name, .title, h2, p, a {
-    font-size: 0.8rem;
+.name, .title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+p, a {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+  color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
-    body, html {
-        flex-direction: column;
-    }
-    .profile-container, .content-container {
-        position: static;
-        max-width: 100%;
-    }
+  body, html {
+    flex-direction: column;
+  }
 }
