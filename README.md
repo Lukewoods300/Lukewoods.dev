@@ -28,6 +28,4 @@ You can do this by simply double-clicking the file in most operating systems, or
 Contribution
 I'm always looking to improve my site and showcase the best of my work. If you have suggestions, please feel free to submit an issue or pull request.
 
-License
-This project is open-sourced under the MIT License. See the LICENSE file for more information.
 
