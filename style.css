@@ -35,14 +35,21 @@ main {
 }
 
 section {
-  background-color: var(--background-dark);
+  background-color: var(--background-darker);
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
 }
 
+.projects {
+  width: 90%; /* Or the desired percentage */
+  max-width: 100%; 
+  min-width: 600px; /* Optional: Set a minimum width */
+  margin: 0 auto;  /* Center the section */
+}
+
 .profile {
-  background-color: var(--background-dark);
+  background-color: var(--background-darker);
   padding: 20px;
   margin: 10px 0;
   border-radius: 10px;
