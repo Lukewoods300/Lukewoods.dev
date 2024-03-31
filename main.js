@@ -67,17 +67,17 @@ projectsContainer.classList.add('projects-container');
 
 const projects = [
   {
-    title: 'Project 1',
+    title: '1',
     description: 'Implemented HL7 interfaces for seamless healthcare data integration.',
     image: 'GJ_rXAWXAAEv3dr.jpg'
   },
   {
-    title: 'Project 2',
+    title: '2',
     description: 'Developed scripts for automated data transformation.',
     image: 'GJ_rXAYWEAAOKum.jpg'
   },
   {
-    title: 'Project 3',
+    title: '3',
     description: 'Led the optimization of PACS deployment on cloud platforms.',
     image: 'GJ_rXAcXoAAkHbO.jpg'
   }
