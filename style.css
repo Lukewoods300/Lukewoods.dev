@@ -143,3 +143,59 @@ a:hover {
   background-color: var(--primary-color);
   border-radius: 10px;
 }  
+
+/* Blog Section Styling */
+.blog { 
+  margin-bottom: 40px; /* Adjust spacing between sections */
+}
+
+.blog h2 { 
+  color: var(--primary-color); 
+  margin-bottom: 20px;
+}
+
+.blog-post { /* Style for individual blog posts */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.blog-post h3 { /* Title of your blog post */
+  color: white; 
+}
+
+.blog-post p { /* Summary, teaser content */
+  margin-bottom: 10px;
+}
+
+.blog-post a { /* Style for "Read More" type links */
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Journal Section Styling */
+.journal {
+  margin-bottom: 40px; 
+}
+
+.journal h2 { 
+  color: var(--primary-color); 
+  margin-bottom: 20px;
+}
+
+.journal-entry {
+  background-color: rgba(255, 255, 255, 0.1); 
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.journal-entry h3 { 
+  color: white;
+}
+
+.journal-entry p { 
+ /* Content of your journal entry */
+}
+
