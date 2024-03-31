@@ -127,8 +127,12 @@ button:hover {
     margin: 5px;
   }
 
-  header, main {
+  header {
     padding: 10px;
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 /* Image Carousel */
