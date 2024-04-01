@@ -73,17 +73,17 @@ projectsContainer.classList.add('projects-container');
 const projects = [
   {
     title: '1',
-    description: 'Implemented HL7 interfaces for seamless healthcare data integration.',
+    description: '1.',
     image: 'GJ_rXAWXAAEv3dr.jpg'
   },
   {
     title: '2',
-    description: 'Developed scripts for automated data transformation.',
+    description: '2.',
     image: 'GJ_rXAYWEAAOKum.jpg'
   },
   {
     title: '3',
-    description: 'Led the optimization of PACS deployment on cloud platforms.',
+    description: '3.',
     image: 'GJ_rXAcXoAAkHbO.jpg'
   }
 ];
@@ -123,24 +123,24 @@ skillsContainer.classList.add('skills-container');
 
 const skills = [
   {
-    name: 'Python',
+    name: '1',
     level: 90
   },
   {
-    name: 'Java',
-    level: 80
+    name: '2',
+    level: 60
   },
   {
-    name: 'PowerShell',
-    level: 85
+    name: '3',
+    level: 45
   },
   {
-    name: 'AWS',
-    level: 75
+    name: '4',
+    level: 35
   },
   {
-    name: 'Azure',
-    level: 70
+    name: '5',
+    level: 10
   }
 ];
 
