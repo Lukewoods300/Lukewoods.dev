@@ -19,6 +19,8 @@ body, html {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -161,6 +163,8 @@ section:hover {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .project-card {
@@ -176,7 +180,7 @@ section:hover {
 }
 
 .project-card img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -193,6 +197,8 @@ section:hover {
 .skills-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .skill-bar {
@@ -432,5 +438,25 @@ button:hover {
   main {
     grid-template-columns: 1fr; /* Stack sections vertically on smaller screens */
     padding: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* Tablet styles */
+  .navbar, .content, .sidebar {
+    width: 100%;
+    padding: 0;
+  }
+  .menu-toggle {
+    display: block; /* Show menu toggle on smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Mobile styles */
+  h1, h2, h3 {
+    font-size: 1em; /* Smaller text on mobile devices */
+  }
+  .project-card, .skill-bar {
+    width: 100%; /* Stack elements vertically on small screens */
   }
 }
