@@ -21,7 +21,6 @@ body, html {
 }
 
 header {
-  background-color: var(--background-darker);
   padding: 20px;
   text-align: center;
 }
