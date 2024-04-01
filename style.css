@@ -153,7 +153,6 @@ section:hover {
 .projects {
   grid-column: 3 / 5;
   grid-row: 1;
-  width: 100%;
 }
 
 .projects-container {
