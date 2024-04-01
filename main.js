@@ -208,7 +208,7 @@ menuToggle.addEventListener('click', () => {
 });
 function fetchWeatherData(city) {
   const apiKey = 'f5b2726eeb1ad855e8c50e07f6b9eff5'; // Replace with your API key
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${San+Jose}&appid=${f5b2726eeb1ad855e8c50e07f6b9eff5}&units=metric`;
 
   fetch(url)
     .then(response => {
