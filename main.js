@@ -87,17 +87,17 @@ const projects = [
     title: '3',
     description: '3.',
     image: 'GJ_rXAcXoAAkHbO.jpg'
-  }
+  },
   {
     title: '4',
     description: '4.',
     image: 'GJ_rXAWXAAEv3dr.jpg'
-  }
+  },
   {
     title: '5',
     description: '5.',
     image: 'GJ_rXAYWEAAOKum.jpg'
-  }
+  },
   {
     title: '6',
     description: '6.',
