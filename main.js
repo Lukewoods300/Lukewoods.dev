@@ -45,9 +45,14 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
   const txtElement = document.querySelector('.dynamic-text');
-  const words = JSON.parse(txtElement.getAttribute('data-words'));
-  const wait = txtElement.getAttribute('data-wait');
-  new TypeWriter(txtElement, words, wait);
+  // Check if the element exists before proceeding
+  if (txtElement) {
+    const words = JSON.parse(txtElement.getAttribute('data-words'));
+    const wait = txtElement.getAttribute('data-wait');
+    new TypeWriter(txtElement, words, wait);
+  } else {
+    console.error('Dynamic text element not found');
+  }
 }
 // Add smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
