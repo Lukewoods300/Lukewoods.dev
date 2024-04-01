@@ -36,6 +36,7 @@ p, a, input, textarea, button {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -47,6 +48,7 @@ header {
   background-color: var(--background-darker);
   padding: 20px;
   text-align: center;
+  animation: fadeIn 1s ease;
 }
 
 /* Main Content */
@@ -56,6 +58,7 @@ main {
   grid-gap: 30px;
   padding: 30px;
   align-items: start;
+  animation: slideUp 1s ease;
 }
 
 section {
@@ -63,6 +66,11 @@ section {
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-10px);
 }
 
 /* Profile Section */
@@ -83,7 +91,11 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-right: 20px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.1);
 }
 
 .profile-picture img {
@@ -100,6 +112,7 @@ section {
 .dynamic-text {
   font-size: 2rem;
   color: var(--primary-color);
+  animation: blink 1s infinite;
 }
 
 /* Projects Section */
@@ -121,6 +134,11 @@ section {
   width: 300px;
   margin-right: 20px;
   scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
 }
 
 .project-card img {
@@ -146,6 +164,7 @@ section {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  animation: growWidth 2s ease;
 }
 
 .skill-name {
@@ -157,6 +176,7 @@ section {
   height: 20px;
   background-color: var(--primary-color);
   border-radius: 10px;
+  animation: growWidth 2s ease;
 }
 
 /* Blog Section */
@@ -174,6 +194,11 @@ section {
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateX(10px);
 }
 
 .blog-post h3 {
@@ -203,6 +228,11 @@ section {
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.journal-entry:hover {
+  transform: translateX(-10px);
 }
 
 .journal-entry h3 {
@@ -222,6 +252,11 @@ input, textarea {
   border: 1px solid var(--primary-color);
   background-color: transparent;
   color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--secondary-color);
 }
 
 button {
@@ -232,6 +267,7 @@ button {
   border-radius: 5px;
   color: var(--text-color);
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -247,36 +283,35 @@ button:hover {
   color: var(--text-color);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .profile, section {
-    padding: 10px;
-    margin: 5px;
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  header {
-    padding: 10px;
+  100% {
+    opacity: 1;
   }
+}
 
-  main {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
   }
-
-  .profile {
-    grid-column: 1 / -1;
-    flex-direction: column;
-    align-items: flex-start;
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
+}
 
-  .profile-picture {
-    margin-right: 0;
-    margin-bottom: 10px;
+@keyframes pulse {
+  0% {
+    opacity: 1;
   }
-
-  .projects,
-  .skills,
-  .blog,
-  .journal {
-    grid-column: 1 / -1;
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
