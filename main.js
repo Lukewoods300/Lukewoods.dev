@@ -239,7 +239,10 @@ function fetchWeatherData(cityId) {
     })
     .catch(error => {
       console.error('There has been a problem with your fetch operation:', error);
+      const weatherContainer = document.getElementById('weather-container');
+      weatherContainer.innerHTML = `<p class="weather-error">Error fetching weather data: ${error.message}</p>`;
     });
+    
 }
 
 // Call this function with the city you want to display weather for
@@ -249,13 +252,40 @@ function updateWeatherUI(data) {
   const tempElement = document.getElementById('weather-temp');
   const descElement = document.getElementById('weather-description');
   const cityElement = document.getElementById('weather-city');
+  const windElement = document.getElementById('weather-wind');
+  const humidityElement = document.getElementById('weather-humidity');
+  const sunriseElement = document.getElementById('weather-sunrise');
+  const sunsetElement = document.getElementById('weather-sunset');
 
   if (data.main && data.weather && data.name) {
-      tempElement.textContent = `Temperature: ${data.main.temp} K`;
+      tempElement.textContent = `Temperature: ${kelvinToCelsius(data.main.temp)} °C (${kelvinToFahrenheit(data.main.temp)} °F)`;
       descElement.textContent = `Weather: ${data.weather[0].description}`;
       cityElement.textContent = `City: ${data.name}`;
   } else {
       console.error('Invalid weather data:', data);
       // Update the UI to inform the user that weather data is not available
   }
+  tempElement.classList.add('weather-temp');
+  descElement.classList.add('weather-desc');
+  cityElement.classList.add('weather-city');
+  windElement.textContent = `Wind: ${data.wind.speed} m/s, ${data.wind.deg} degrees`;
+  humidityElement.textContent = `Humidity: ${data.main.humidity}%`;
+  sunriseElement.textContent = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}`;
+  sunsetElement.textContent = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`;
+
+  const iconElement = document.getElementById('weather-icon');
+  iconElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" />`;
+}
+
+function kelvinToCelsius(kelvin) {
+  return (kelvin - 273.15).toFixed(2);
+}
+
+function kelvinToFahrenheit(kelvin) {
+  return ((kelvin - 273.15) * 9/5 + 32).toFixed(2);
+}
+
+function refreshWeatherData() {
+  // Re-fetch the weather data
+  fetchWeatherData('5392171');
 }

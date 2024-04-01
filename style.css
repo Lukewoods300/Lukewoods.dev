@@ -364,6 +364,12 @@ button:hover {
   background-color: var(--background-darker);
 }
 
+.weather-temp {
+  font-size: 2rem; /* responsive font size */
+  font-weight: bold;
+  color: #ff0; /* example color */
+}
+
 /* Animations */
 @keyframes fadeIn {
   0% {
@@ -439,6 +445,10 @@ button:hover {
     grid-template-columns: 1fr; /* Stack sections vertically on smaller screens */
     padding: 10px;
   }
+
+  .weather-temp {
+    font-size: 1.5rem; /* smaller font size for tablet and mobile */
+  }
 }
 @media only screen and (max-width: 768px) {
   /* Tablet styles */
@@ -460,3 +470,4 @@ button:hover {
     width: 100%; /* Stack elements vertically on small screens */
   }
 }
+
