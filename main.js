@@ -206,9 +206,9 @@ const navMenu = document.querySelector('.nav-menu');
 menuToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
-function fetchWeatherData(city) {
+function fetchWeatherData(cityId) {
   const apiKey = 'f5b2726eeb1ad855e8c50e07f6b9eff5'; // Replace with your API key
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${San+Jose}&appid=${f5b2726eeb1ad855e8c50e07f6b9eff5}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}`;
 
   fetch(url)
     .then(response => {
@@ -227,4 +227,4 @@ function fetchWeatherData(city) {
 }
 
 // Call this function with the city you want to display weather for
-fetchWeatherData('San Jose');
+fetchWeatherData('5392171');
