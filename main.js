@@ -235,6 +235,7 @@ function fetchWeatherData(cityId) {
     .then(data => {
       console.log(data); // You can now use this data to display weather information
       // Update your HTML here
+      updateWeatherUI(data)
     })
     .catch(error => {
       console.error('There has been a problem with your fetch operation:', error);
