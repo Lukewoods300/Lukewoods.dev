@@ -48,7 +48,18 @@ header {
   background-color: var(--background-darker);
   padding: 20px;
   text-align: center;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 3s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 /* Main Content */
@@ -243,6 +254,40 @@ section:hover {
   color: white;
 }
 
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin-bottom: 5px;
+}
+
 /* Form Styles */
 input, textarea {
   width: 100%;
@@ -314,5 +359,31 @@ button:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-darker);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu.active {
+    display: flex;
   }
 }

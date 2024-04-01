@@ -197,3 +197,10 @@ setMaxHeight(blogPosts, "100px");
 addReadMoreButton(blogPosts, "Read More");
 setMaxHeight(journalEntries, "100px"); 
 addReadMoreButton(journalEntries, "Read More");
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
