@@ -8,6 +8,7 @@
   --background-darker: rgba(0, 0, 0, 0.8);
 }
 
+/* General Styles */
 body, html {
   height: 100%;
   margin: 0;
@@ -18,66 +19,6 @@ body, html {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-}
-
-header {
-  background-color: var(--background-darker);
-  padding: 20px;
-  text-align: center;
-}
-
-main {
-  min-width: 20%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-  align-items: start;
-}
-
-section {
-  background-color: var(--background-darker);
-  padding: 20px;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-
-.projects {
-  width: 90%; /* Or the desired percentage */
-  max-width: 100%; 
-}
-
-.profile {
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-
-.profile-picture {
-  width: 80px; /* Adjust width as needed */
-  height: 80px; /* Adjust height as needed */
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.profile-picture img {
-  width: 100%;
-  height: auto;
-}
-
-.name, .title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.dynamic-text {
-  font-size: 1.5rem;
-  color: var(--primary-color);
 }
 
 h2 {
@@ -101,45 +42,69 @@ a:hover {
   color: var(--secondary-color);
 }
 
-input, textarea {
-  width: 100%;
+/* Header */
+header {
+  background-color: var(--background-darker);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+section {
+  background-color: var(--background-darker);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile {
   padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  border: 1px solid var(--primary-color);
-  background-color: transparent;
-  color: var(--text-color);
+  margin: 10px 0;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-button {
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.profile-picture img {
   width: 100%;
-  padding: 10px;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 5px;
-  color: var(--text-color);
-  cursor: pointer;
+  height: auto;
 }
 
-button:hover {
-  background-color: var(--secondary-color);
+.name, .title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-  .profile, section {
-    padding: 10px;
-    margin: 5px;
-  }
-
-  header {
-    padding: 10px;
-  }
-
-  main {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+.dynamic-text {
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
-/* Image Carousel */
+
+/* Projects Section */
+.projects {
+  width: 90%;
+  max-width: 100%;
+}
+
 .projects-container {
   display: flex;
   overflow-x: auto;
@@ -164,7 +129,7 @@ button:hover {
   padding: 10px;
 }
 
-/* Skill Bars */
+/* Skills Section */
 .skills-container {
   display: flex;
   flex-direction: column;
@@ -185,61 +150,97 @@ button:hover {
   height: 20px;
   background-color: var(--primary-color);
   border-radius: 10px;
-}  
-
-/* Blog Section Styling */
-.blog { 
-  margin-bottom: 40px; /* Adjust spacing between sections */
 }
 
-.blog h2 { 
-  color: var(--primary-color); 
+/* Blog Section */
+.blog {
+  margin-bottom: 40px;
+}
+
+.blog h2 {
   margin-bottom: 20px;
 }
 
-.blog-post { /* Style for individual blog posts */
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+.blog-post {
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
-.blog-post h3 { /* Title of your blog post */
-  color: white; 
+.blog-post h3 {
+  color: white;
 }
 
-.blog-post p { /* Summary, teaser content */
+.blog-post p {
   margin-bottom: 10px;
 }
 
-.blog-post a { /* Style for "Read More" type links */
-  color: var(--primary-color);
+.blog-post a {
   font-weight: bold;
 }
 
-/* Journal Section Styling */
+/* Journal Section */
 .journal {
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
-.journal h2 { 
-  color: var(--primary-color); 
+.journal h2 {
   margin-bottom: 20px;
 }
 
 .journal-entry {
-  background-color: rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
-.journal-entry h3 { 
+.journal-entry h3 {
   color: white;
 }
 
-.journal-entry p { 
- /* Content of your journal entry */
- color: white;
+.journal-entry p {
+  color: white;
 }
 
+/* Form Styles */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .profile, section {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
