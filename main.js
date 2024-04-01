@@ -41,7 +41,9 @@ class TypeWriter {
   }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', (event) => {
+  fetchWeatherData('San Jose'); // Replace 'London' with your preferred city
+});
 
 function init() {
   const txtElement = document.querySelector('.dynamic-text');
@@ -204,3 +206,25 @@ const navMenu = document.querySelector('.nav-menu');
 menuToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
+function fetchWeatherData(city) {
+  const apiKey = 'f5b2726eeb1ad855e8c50e07f6b9eff5'; // Replace with your API key
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data); // You can now use this data to display weather information
+      // Update your HTML here
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+}
+
+// Call this function with the city you want to display weather for
+fetchWeatherData('San Jose');
