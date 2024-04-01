@@ -46,7 +46,7 @@ a:hover {
 /* Header */
 header {
   background-color: var(--background-darker);
-  padding: 20px;
+  padding: 60px;
   text-align: center;
   animation: fadeIn 3s ease;
 }
