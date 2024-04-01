@@ -261,6 +261,11 @@ function updateWeatherUI(data) {
       tempElement.textContent = `Temperature: ${kelvinToCelsius(data.main.temp)} °C (${kelvinToFahrenheit(data.main.temp)} °F)`;
       descElement.textContent = `Weather: ${data.weather[0].description}`;
       cityElement.textContent = `City: ${data.name}`;
+      windElement.textContent = `Wind: ${data.wind.speed} m/s, ${data.wind.deg} degrees`;
+      humidityElement.textContent = `Humidity: ${data.main.humidity}%`;
+      sunriseElement.textContent = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}`;
+      sunsetElement.textContent = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`;
+
   } else {
       console.error('Invalid weather data:', data);
       // Update the UI to inform the user that weather data is not available
@@ -268,11 +273,7 @@ function updateWeatherUI(data) {
   tempElement.classList.add('weather-temp');
   descElement.classList.add('weather-desc');
   cityElement.classList.add('weather-city');
-  windElement.textContent = `Wind: ${data.wind.speed} m/s, ${data.wind.deg} degrees`;
-  humidityElement.textContent = `Humidity: ${data.main.humidity}%`;
-  sunriseElement.textContent = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}`;
-  sunsetElement.textContent = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`;
-
+  
   const iconElement = document.getElementById('weather-icon');
   iconElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" />`;
 }
