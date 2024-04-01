@@ -81,6 +81,16 @@ section {
   min-height: 200px;
 }
 
+.contact {
+  background-color: var(--background-darker);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  animation: slideUp 0.8s ease;
+  min-height: 200px;
+  min-width: fit-content;
+}
+
 section:hover {
   transform: translateY(-10px);
 }
@@ -115,10 +125,16 @@ section:hover {
   height: auto;
 }
 
-.name, .title {
+.name {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 10px 0;
+  margin-bottom: 20px; /* Increase the bottom margin of the .name class */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 20px; /* Increase the top margin of the .title class if needed */
 }
 
 .dynamic-text {
