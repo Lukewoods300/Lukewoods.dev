@@ -42,7 +42,7 @@ class TypeWriter {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  fetchWeatherData('San Jose'); // Replace 'London' with your preferred city
+  fetchWeatherData('5392171'); // Replace 'London' with your preferred city
 });
 
 function init() {
