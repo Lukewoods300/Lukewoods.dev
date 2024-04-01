@@ -243,3 +243,18 @@ function fetchWeatherData(cityId) {
 
 // Call this function with the city you want to display weather for
 fetchWeatherData('5392171');
+
+function updateWeatherUI(data) {
+  const tempElement = document.getElementById('weather-temp');
+  const descElement = document.getElementById('weather-description');
+  const cityElement = document.getElementById('weather-city');
+
+  if (data.main && data.weather && data.name) {
+      tempElement.textContent = `Temperature: ${data.main.temp} K`;
+      descElement.textContent = `Weather: ${data.weather[0].description}`;
+      cityElement.textContent = `City: ${data.name}`;
+  } else {
+      console.error('Invalid weather data:', data);
+      // Update the UI to inform the user that weather data is not available
+  }
+}
