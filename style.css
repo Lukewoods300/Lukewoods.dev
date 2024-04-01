@@ -46,9 +46,10 @@ a:hover {
 /* Header */
 header {
   background-color: var(--background-darker);
-  padding: 60px;
+  padding: 10px;
   text-align: center;
   animation: fadeIn 3s ease;
+  margin-bottom: 40px; /* Add this line */
 }
 
 nav {
