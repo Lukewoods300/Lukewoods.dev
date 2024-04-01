@@ -65,9 +65,10 @@ nav {
 /* Main Content */
 main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto); /* This will set a minimum height */
-  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto; /* Remove the minmax() function */
+  grid-gap: 20px;
+  padding: 20px;
   align-content: start;
   animation: slideUp 1s ease;
 }
@@ -402,5 +403,10 @@ button:hover {
 
   .nav-menu.active {
     display: flex;
+  }
+
+  main {
+    grid-template-columns: 1fr; /* Stack sections vertically on smaller screens */
+    padding: 10px;
   }
 }
