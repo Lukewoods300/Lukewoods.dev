@@ -60,13 +60,19 @@ nav {
 }
 
 .logo, .profile-picture {
-  display: flex;
-  align-items: center;
+  width: 80px;     /* Adjust as needed */
+  height: 80px;    /* Adjust as needed  */
+  border-radius: 50%;
+  background-image: url('profile-picture.png'); /* Set image as background */
+  background-size: cover;    /* Ensure image covers the container */
+  background-position: center;  /* Center the image within the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  margin-right: 10px;  /* Add some spacing between image and text */
 }
 
 .profile-picture img {
-  width: 100%;
-  height: auto;
+  width: 80px; /* Adjust the width to your preference */
+  height: 80px; /* Adjust the height to match and maintain aspect ratio */
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
