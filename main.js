@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchWeatherData('5392171');
   loadProjects();
   loadSkills();
+  initMenuToggle();
 });
 
 function initTypeWriter() {
@@ -128,4 +129,13 @@ function kelvinToFahrenheit(kelvin) {
 function refreshWeatherData() {
   // Re-fetch the weather data
   fetchWeatherData('5392171');
+}
+
+function initMenuToggle() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 }
