@@ -221,3 +221,28 @@ button {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
+
+.waveform-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+#waveform {
+  stroke: #ff0000;
+  stroke-width: 4;
+  fill: none;
+  animation: waveform-animation 2s linear infinite;
+}
+
+@keyframes waveform-animation {
+  0% {
+    d: path("M0,100 Q250,50 500,100 T1000,100");
+  }
+  50% {
+    d: path("M0,100 Q250,150 500,100 T1000,100");
+  }
+  100% {
+    d: path("M0,100 Q250,50 500,100 T1000,100");
+  }
+}
